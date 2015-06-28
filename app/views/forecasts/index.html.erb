@@ -1,0 +1,14 @@
+<h1> Weather App </h1>
+
+<h2> Current Temperature in Gary, Indiana: <%= @forecasts["query"]["results"]["channel"]["item"]["condition"]["temp"] %></h2>
+
+<h2> 5 day Forecast: </h2>
+<% @forecasts["query"]["results"]["channel"]["item"]["forecast"].each do |forecast| %>
+<div>
+  <h3>Day: <%= forecast["day"] %> </h3>
+  <h3>High: <%= forecast["high"] %></h3>
+  <h3>Low: <%= forecast["low"] %></h3>
+  <h3>Description: <%= forecast["text"] %></h3>
+  -----------------------------------------------
+</div>
+  <% end %>
